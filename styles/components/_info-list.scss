@@ -1,0 +1,35 @@
+.info-list {
+  @include text-style(18);
+  z-index: 999;
+  display: grid;
+  padding: 1rem 0;
+  text-align: left;
+  grid-template-columns: 40px 80px 40px 70px;
+
+  dt,
+  dd {
+    padding: 0.5rem 0;
+    line-height: 1.7;
+  }
+
+  dt {
+    text-align: left;
+    font-weight: 400;
+    color: $color-gray-400;
+  }
+
+  dd {
+    margin-right: auto;
+    font-weight: 700;
+    color: $color-gray-700;
+
+    .unit {
+      font-weight: 400;
+      color: $color-gray-400;
+    }
+  }
+
+  @include responsive(T) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

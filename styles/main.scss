@@ -1,3 +1,25 @@
-h1 {
-  color: red;
-}
+@import './constants/breakpoints';
+@import './constants/colors';
+@import './constants/typography';
+
+@import './base/nomalize';
+@import './base/reset';
+@import './base/globals';
+
+@import './mixins/text-styles';
+@import './mixins/responsive';
+@import './mixins/flexbox';
+
+@import './components/clouds';
+@import './components/wave';
+@import './components/container';
+@import './components/home';
+@import './components/gnb';
+@import './components/search';
+@import './components/info-area';
+@import './components/beach-info-top';
+@import './components/beach-info-wrapper';
+@import './components/info-list';
+@import './components/error';
+@import './components/loading';
+@import './components/guide';
