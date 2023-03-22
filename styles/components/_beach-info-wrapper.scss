@@ -1,0 +1,47 @@
+.beach-info-wrapper {
+  @include flexbox;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .ic-wrapper {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.8rem;
+  }
+
+  .fa-solid {
+    font-size: 28px;
+    color: $color-gray-300;
+    text-align: center;
+    transition: color ease-in-out 300ms;
+
+    &.fa-water {
+      font-size: 26px;
+    }
+
+    .info-list {
+      flex-grow: 2;
+    }
+  }
+
+  @include responsive(T) {
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    .fa-solid {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .fa-solid {
+        color: $color-blue;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    width: 200px;
+    margin: 0 1rem;
+  }
+}

@@ -1,0 +1,13 @@
+.info-area {
+  display: grid;
+
+  @include responsive(T) {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(D) {
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
