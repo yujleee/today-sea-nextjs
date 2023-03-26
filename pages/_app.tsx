@@ -2,7 +2,8 @@ import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
 import Head from 'next/head';
-import '../styles/main.scss';
+import 'styles/global.scss';
+import Container from 'components/layout/Container';
 
 const client = new QueryClient({
   defaultOptions: {
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>오늘의 바다</title>
         </Head>
-        <Component {...pageProps} />
+        <Container>
+          <Component {...pageProps} />
+        </Container>
       </QueryClientProvider>
     </RecoilRoot>
   );

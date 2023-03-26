@@ -1,58 +1,54 @@
-.reset {
-  * {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-    font-family: $font-main;
-    margin: 0;
+html {
+  font-family: $font-main;
+  font-size: 10px;
 
-    &:focus {
-      outline: 0;
-    }
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-family: $font-main;
+  margin: 0;
+
+  &:focus {
+    outline: 0;
   }
+}
 
-  html {
-    font-family: $font-main;
-    font-size: 10px;
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: $font-main;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
   }
+}
 
-  body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    font-family: $font-main;
-  }
+a,
+button {
+  cursor: pointer;
+}
 
-  h1 {
-    margin: 0;
-  }
+button {
+  padding: 0;
+}
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  button {
-    background-color: transparent;
-    border: 0;
-
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  a,
-  button {
-    cursor: pointer;
-  }
-
-  button {
-    padding: 0;
-  }
-
-  ul,
-  ol {
-    list-style: none;
-  }
+ul,
+ol {
+  list-style: none;
 }
