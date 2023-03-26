@@ -1,4 +1,6 @@
-.wave-wrapper {
+@import '../index.scss';
+
+.waveWrapper {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -8,21 +10,25 @@
     opacity: 0.5;
   }
 
-  .desc-text.bottom {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    z-index: 99;
-    font-size: 1.2rem;
+  .descText {
+    &.bottom {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      z-index: 99;
+      font-size: 1.2rem;
 
-    color: $color-white;
-    white-space: nowrap;
-    transform: translateX(-50%);
+      color: $color-white;
+      white-space: nowrap;
+      transform: translateX(-50%);
+    }
   }
 
   @include responsive(T) {
-    .desc-text.bottom {
-      @include text-style(14);
+    .descText {
+      &.bottom {
+        @include text-style(14);
+      }
     }
   }
 }

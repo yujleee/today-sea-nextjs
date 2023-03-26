@@ -2,8 +2,8 @@ import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
 import Head from 'next/head';
-import '../styles/main.scss';
-import Container from '../components/layout/Container';
+import 'styles/global.scss';
+import Container from 'components/layout/Container';
 
 const client = new QueryClient({
   defaultOptions: {

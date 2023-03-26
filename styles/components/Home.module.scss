@@ -1,4 +1,6 @@
-.title-wrapper {
+@import '../index.scss';
+
+.titleWrapper {
   @include flexbox;
   flex-direction: column;
   margin-bottom: 4rem;
@@ -8,7 +10,7 @@
   }
 }
 
-.desc-text {
+.descText {
   @include text-style(16);
   color: $color-gray-400;
 }
