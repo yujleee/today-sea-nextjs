@@ -1,4 +1,6 @@
-.info-area {
+@import '../index.scss';
+
+.infoArea {
   display: grid;
 
   @include responsive(T) {

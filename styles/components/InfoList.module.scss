@@ -1,10 +1,12 @@
-.info-list {
+@import '../index.scss';
+
+.infoList {
   @include text-style(18);
   z-index: 999;
   display: grid;
   padding: 1rem 0;
   text-align: left;
-  grid-template-columns: 40px 80px 40px 70px;
+  grid-template-columns: 30px 100px 30px 100px;
 
   dt,
   dd {
@@ -19,7 +21,8 @@
   }
 
   dd {
-    margin-right: auto;
+    min-width: 10rem;
+    margin-right: 0;
     font-weight: 700;
     color: $color-gray-700;
 
@@ -30,6 +33,7 @@
   }
 
   @include responsive(T) {
+    max-width: 17.6rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
