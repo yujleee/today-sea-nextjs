@@ -1,26 +1,28 @@
-.beach-info-wrapper {
+@import '../index.scss';
+
+.beachInfoWrapper {
   @include flexbox;
   flex-shrink: 1;
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  .ic-wrapper {
+  .icWrapper {
     width: 32px;
     height: 32px;
     margin-right: 0.8rem;
   }
 
-  .fa-solid {
+  .faSolid {
     font-size: 28px;
     color: $color-gray-300;
     text-align: center;
     transition: color ease-in-out 300ms;
 
-    &.fa-water {
+    &.faWater {
       font-size: 26px;
     }
 
-    .info-list {
+    .infoList {
       flex-grow: 2;
     }
   }
@@ -29,12 +31,12 @@
     flex-direction: column;
     margin-bottom: 3rem;
 
-    .fa-solid {
+    .faSolid {
       margin-right: 0;
     }
 
     &:hover {
-      .fa-solid {
+      .faSolid {
         color: $color-blue;
       }
     }

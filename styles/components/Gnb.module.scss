@@ -1,39 +1,41 @@
+@import '../index.scss';
+
 .gnb {
   @include flexbox(between);
   width: 100%;
-  margin: 0 auto 1rem;
   overflow-x: hidden;
 
   button {
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     cursor: pointer;
   }
 
-  .btn-menu {
+  .btnMenu {
     a {
       padding: 1rem;
     }
   }
 
-  .btn-menu:hover,
-  .btn-guide:hover {
-    .fa-solid {
+  .btnMenu:hover,
+  .btnGuide:hover {
+    .faSolid {
       color: $color-blue;
     }
   }
 
-  .ic-chevron,
-  .ic-guide {
-    font-size: 2.6rem;
+  .icChevron,
+  .icGuide {
+    font-size: 2.8rem;
     color: $color-gray-400;
   }
 
-  .ic-guide {
+  .icGuide {
+    font-size: 2.4rem;
     padding: 0.5rem;
   }
 
   @include responsive(T) {
-    padding: 0 1rem;
-    margin: 0 auto 2rem;
+    padding: 0.4rem 0;
+    margin: 0 auto 1rem;
   }
 }
