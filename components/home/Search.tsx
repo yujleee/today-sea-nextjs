@@ -36,13 +36,9 @@ const Search = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('keyword', keyword);
 
-    const info = beachInfo.find((beach) => {
-      return removeSpace(beach.name) === removeSpace(keyword);
-    });
+    const info = beachInfo.find((beach) => removeSpace(beach.name) === removeSpace(keyword));
 
-    console.log('info', info);
     router.push({
       pathname: '/info',
       query: { info: JSON.stringify(info) },
@@ -67,7 +63,7 @@ const Search = () => {
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <button type="button" className={styles.searchBtn} onClick={handleSubmit}>
+        <button type="button" className={styles.searchBtn}>
           <FiSearch className={styles.icSearch} aria-label="검색하기" />
         </button>
       </form>
