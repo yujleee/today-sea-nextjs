@@ -3,7 +3,7 @@ interface ContainerType {
 }
 
 interface Beach {
-  beachNum: number;
+  'beach-num': number;
   lat: number;
   lon: number;
   name: string;
