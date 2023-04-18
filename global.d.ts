@@ -10,3 +10,8 @@ interface Beach {
   nx: number;
   ny: number;
 }
+
+interface Now {
+  date: string;
+  time: string;
+}
