@@ -4,7 +4,7 @@ import styles from 'styles/components/Wave.module.scss';
 
 const Waves = () => {
   const router = useRouter();
-  const currentPath = router.pathname.slice(1);
+  const currentPath = router.pathname.split('/')[1];
 
   return (
     <div className={styles.waveWrapper}>

@@ -12,7 +12,7 @@ const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
 const Search = () => {
   const [currentTime, setCurrentTime] = useState({ date: '', time: '' });
   const beachInfo = useRecoilValue(beachInfoState);
-  const { beachNames, resetBeachInfo } = useBeachData();
+  const { resetBeachInfo } = useBeachData();
   const [keyword, setKeyword] = useState<string>('');
   const router = useRouter();
 
@@ -38,15 +38,24 @@ const Search = () => {
     e.preventDefault();
 
     const info = beachInfo.find((beach) => removeSpace(beach.name) === removeSpace(keyword));
+    const beachNum = info ? info['beach-num'] : 0;
 
-    router.push({
-      pathname: '/info',
-      query: { info: JSON.stringify(info) },
-    });
+    router.push(
+      {
+        pathname: '/info/[beachNum]',
+        query: {
+          beachNum: beachNum,
+          info: JSON.stringify(info),
+          time: JSON.stringify(currentTime),
+        },
+      },
+      `/info/${beachNum}`
+    );
   };
 
   useEffect(() => {
     resetBeachInfo();
+    getCurrentTime();
   }, []);
 
   return (

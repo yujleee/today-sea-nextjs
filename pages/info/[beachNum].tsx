@@ -8,16 +8,24 @@ import { useGuide } from 'hooks';
 import BeachInfoTop from 'components/beachInfo/BeachInfoTop';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import useBeachDetailData from 'hooks/useBeachDetailData';
 
 export default function Info() {
   const router = useRouter();
   const { isOpen, handleGuideClose, handleGuideOpen } = useGuide();
   const [beachInfo, setBeachInfo] = useState({});
+  const [currentTime, setCurrentTime] = useState<Now>({ date: '', time: '' });
+  //   const { } = useBeachDetailData(beachInfo['beach-num'], currentTime);
+
   const { query } = router;
 
   useEffect(() => {
     setBeachInfo(JSON.parse(query.info as string));
-  }, []);
+    setCurrentTime(JSON.parse(query.time as string));
+  }, [query]);
+
+  console.log('beachInfo', beachInfo);
+  console.log('currentTime', currentTime);
 
   return (
     <>
