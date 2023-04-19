@@ -65,7 +65,7 @@ const Search = () => {
   useEffect(() => {
     resetBeachInfo();
     getCurrentTime();
-  }, []);
+  }, [resetBeachInfo, getCurrentTime]);
 
   return (
     <div className={styles.searchWrapper}>
