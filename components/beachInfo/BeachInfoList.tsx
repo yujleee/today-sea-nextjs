@@ -1,7 +1,13 @@
 import styles from 'styles/components/InfoArea.module.scss';
 import BeachInfoItem from './BeachInfoItem';
 
-const BeachInfoList = () => {
+interface BeachInfoListProps {
+  forecasts: Forecast[];
+  tides: Tide[];
+  suns: Sun[];
+}
+
+const BeachInfoList = ({ forecasts, tides, suns }: BeachInfoListProps) => {
   return (
     <section className={styles.infoArea}>
       <BeachInfoItem type="swim" text={['수온', '습도']} />

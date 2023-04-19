@@ -2,18 +2,26 @@ import useBeachData from 'hooks/useBeachData';
 import { useRouter } from 'next/router';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { useRecoilValue } from 'recoil';
-import { beachInfoState } from 'recoil/atoms/atoms';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  beachInfoState,
+  beachNumState,
+  currentBeachNameState,
+  currentTimeState,
+} from 'recoil/atoms/atoms';
 import styles from 'styles/components/Search.module.scss';
 import { removeSpace } from 'util/text';
 
 const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
 
 const Search = () => {
-  const [currentTime, setCurrentTime] = useState({ date: '', time: '' });
+  const [keyword, setKeyword] = useState<string>('');
+
+  const setBeachNum = useSetRecoilState(beachNumState);
+  const setCurrentTime = useSetRecoilState(currentTimeState);
+  const setCurrentBeachName = useSetRecoilState(currentBeachNameState);
   const beachInfo = useRecoilValue(beachInfoState);
   const { resetBeachInfo } = useBeachData();
-  const [keyword, setKeyword] = useState<string>('');
   const router = useRouter();
 
   const getBaseTime = (now: number) => {
@@ -38,19 +46,20 @@ const Search = () => {
     e.preventDefault();
 
     const info = beachInfo.find((beach) => removeSpace(beach.name) === removeSpace(keyword));
-    const beachNum = info ? info['beach-num'] : 0;
+    const beachNum = info ? info['beach-num'] : 1;
 
     router.push(
       {
         pathname: '/info/[beachNum]',
         query: {
-          beachNum: beachNum,
           info: JSON.stringify(info),
-          time: JSON.stringify(currentTime),
         },
       },
       `/info/${beachNum}`
     );
+
+    setBeachNum(beachNum);
+    setCurrentBeachName(info ? info.name : '');
   };
 
   useEffect(() => {
