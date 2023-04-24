@@ -8,7 +8,7 @@
 
 오늘의 바다는 전국의 해수욕장 날씨와 바다 상황을 조회할 수 있는 서비스입니다.
 
-리액트 공부 이전 [Vanilla JS로 만들었던 프로젝트](https://github.com/yujleee/today-sea)를 `next.js`로 마이그레이션 해보았습니다. 
+리액트 공부 이전 [Vanilla JS로 만들었던 프로젝트](https://github.com/yujleee/today-sea)를 `next.js`로 마이그레이션 진행중입니다. 
 
 상세 기능은 현재까지 기존 프로젝트와 동일합니다.
 
